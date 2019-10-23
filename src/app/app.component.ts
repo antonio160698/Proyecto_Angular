@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'practicando-ando';
+  title = 'TPM';
+  name = 'El puto de juan';
+  hojitas = ['Mariguana', 'Bella Dona', 'Telefono', 'Julieta'];
+  hojaBuena = '';
+
+  changeTitle(){
+    this.title = 'No vales madres para programar puto'
+  }
+
+  addHojitas(){
+    this.hojitas.push(this.hojaBuena);
+  }
+  private changeName(){
+    this.name = 'juan';
+  }
 }
