@@ -1,1 +1,6 @@
-<p>header works!</p>
+<button class="btn btn-danger" (click)="cambiarNombre()">Cambia Nombre</button>
+<button class="btn btn-warning" (click)="suma()">Suma + 1</button>
+<button class="btn btn-dark" (click)="add()">Agrega un numero</button>
+<p>{{nombre}}</p>
+<p>{{contador}}</p>
+<li *ngFor="let numero of arr">{{numero}}</li>
