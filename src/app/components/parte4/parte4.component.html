@@ -1,0 +1,12 @@
+<button [type]="tipo" [disabled]="desactivado">Tu nombre es {{ titulo }}</button>
+
+<input type="text" [(ngModel)]="titulo" (ngModelChange)="log($event)"/>
+
+<button (click)="desactivado=!desactivado">Cambiar desactivado</button>
+
+<h1>Has seleccionado: {{seleccion}}</h1>
+<select [(ngModel)]="seleccion" (change)="seleccion = $event.target.value">
+    <option value="Toyota">Toyota</option>
+    <option value="Hyundai">Hyundai</option>
+    <option value="Mercedes">Mercedes</option>
+</select>
