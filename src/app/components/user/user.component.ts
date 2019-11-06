@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, Host } from '@angular/core';
 import {Usuario, UserType} from '../../intenfaces/newInterface';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-user',
@@ -8,7 +9,15 @@ import {Usuario, UserType} from '../../intenfaces/newInterface';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  @Input('data') dato: any
+
+  // @Output() borrar = new EventEmitter<number>()
+
+  constructor(
+    @Host() private _app:AppComponent
+  ) {
+    console.log(this._app)
+   }
 
   ngOnInit() {
   }
@@ -38,6 +47,11 @@ export class UserComponent implements OnInit {
   mostrar(){
     console.log(this.user[0]);
     console.log(this.user[1]);
+  }
+
+  BorrarUsuario(id: number){
+    // this.borrar.emit(id)
+    this._app.usuarios = this._app.usuarios.filter(usuario => usuario.id != id)
   }
 
 }
